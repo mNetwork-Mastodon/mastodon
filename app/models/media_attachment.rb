@@ -38,12 +38,11 @@ class MediaAttachment < ApplicationRecord
 
   MAX_DESCRIPTION_LENGTH = 1_500
 
-  IMAGE_LIMIT = 20.megabytes
-  VIDEO_LIMIT = 80.megabytes
+  IMAGE_LIMIT = 10.megabytes
+  VIDEO_LIMIT = 40.megabytes
 
-  MAX_VIDEO_MATRIX_LIMIT = 8_294_400 # 3840x2160px
-  MAX_VIDEO_FRAME_RATE   = 120
-  MAX_VIDEO_OUTPUT_FRAME_RATE = 60
+  MAX_VIDEO_MATRIX_LIMIT = 2_304_000 # 1920x1200px
+  MAX_VIDEO_FRAME_RATE   = 60
 
   IMAGE_FILE_EXTENSIONS = %w(.jpg .jpeg .png .gif .webp .heic .heif .avif).freeze
   VIDEO_FILE_EXTENSIONS = %w(.webm .mp4 .m4v .mov).freeze
@@ -94,7 +93,7 @@ class MediaAttachment < ApplicationRecord
   VIDEO_FORMAT = {
     format: 'mp4',
     content_type: 'video/mp4',
-    vfr_frame_rate_threshold: MAX_VIDEO_OUTPUT_FRAME_RATE,
+    vfr_frame_rate_threshold: MAX_VIDEO_FRAME_RATE,
     convert_options: {
       output: {
         'loglevel' => 'fatal',
