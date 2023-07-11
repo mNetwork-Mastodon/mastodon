@@ -17,11 +17,13 @@ exports[`<DisplayName /> renders display name + account name 1`] = `
     />
   </bdi>
    
-  <span
+  <div
     className="display-name__account"
   >
-    @
-    bar@baz
+    <span>@
+    bar</span>
+    <span className="display-name__account_domain">@
+    baz</span>
   </span>
 </span>
 `;

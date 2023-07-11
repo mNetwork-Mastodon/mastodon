@@ -624,6 +624,10 @@ body > [data-popper-placement] {
     color: $lighter-text-color;
   }
 
+  .display-name__account_domain {
+    font-size: 80%;
+  }
+
   .compose-form__modifiers {
     color: $inverted-text-color;
     font-family: inherit;

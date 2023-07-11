@@ -58,12 +58,20 @@ export default class DisplayName extends React.PureComponent {
 
       let acct = account.get('acct');
 
+      let handle, domain;
+
       if (acct.indexOf('@') === -1 && localDomain) {
-        acct = `${acct}@${localDomain}`;
+        handle = acct;
+        domain = localDomain;
+      } else {
+        let tempArray = acct.split('@');
+
+        handle = tempArray[0];
+        domain = tempArray[1];
       }
 
       displayName = <bdi><strong className='display-name__html' dangerouslySetInnerHTML={{ __html: account.get('display_name_html') }} /></bdi>;
-      suffix      = <span className='display-name__account'>@{acct}</span>;
+      suffix      = <div className='display-name__account'><span>@{handle}</span><span className='display-name__account_domain'>@{domain}</span></div>;
     } else {
       displayName = <bdi><strong className='display-name__html'><Skeleton width='10ch' /></strong></bdi>;
       suffix = <span className='display-name__account'><Skeleton width='7ch' /></span>;
