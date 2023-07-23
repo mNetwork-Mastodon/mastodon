@@ -271,13 +271,13 @@ class EmojiPickerMenu extends React.PureComponent {
     return (
       <div className={classNames('emoji-picker-dropdown__menu', { selecting: modifierOpen })} style={style} ref={this.setRef}>
         <EmojiPicker
-          perLine={6}
-          emojiSize={33}
-          sheetSize={64}
+          perLine={8}
+          emojiSize={22}
+          sheetSize={32}
           custom={buildCustomEmojis(custom_emojis)}
           color=''
           emoji=''
-          set='apple'
+          set='twitter'
           title={title}
           i18n={this.getI18n()}
           onClick={this.handleClick}
