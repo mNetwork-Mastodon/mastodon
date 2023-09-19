@@ -88,5 +88,10 @@ jobs:
           push: ${{ inputs.push_to_images != '' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          build-args: |
+            GITHUB_REPOSITORY=${{ github.repository }}
+            # TODO: Find nice way to replace this with variable
+            SOURCE_BASE_URL=https://github.com/mNetwork-Mastodon/mastodon
+            SOURCE_TAG=${{ github.ref_name }}
           cache-from: ${{ inputs.cache && 'type=gha' || '' }}
           cache-to: ${{ inputs.cache && 'type=gha,mode=max' || '' }}

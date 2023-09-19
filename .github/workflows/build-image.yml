@@ -44,8 +44,8 @@ jobs:
             latest=auto
           tags: |
             type=edge,branch=mnetwork
-            type=match,pattern=^v\d+\.\d+\.\d+(?:rc\d+)?\+mastodon
-            type=match,pattern=^v\d+\.\d+\.\d+(?:rc\d+)?\+mastodon\d+
+            type=match,pattern=^v\d+\.\d+\.\d+(?:rc\d+)?\+mnetwork\d+\.\d+
+            type=match,pattern=^v\d+\.\d+\.\d+(?:rc\d+)?\+mnetwork\d+
             type=ref,event=tag
 
       - uses: docker/build-push-action@v4
